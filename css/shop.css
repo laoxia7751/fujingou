@@ -1,0 +1,44 @@
+/* ====侧栏弹窗样式 ==== */
+#layout{position:fixed;top:0;left:0;overflow:hidden;width:100%;height:100%}
+.page-wrapper{position:relative;width:100%;height:100%;max-width: 640px;margin:0 auto;}
+#left_menu{position:absolute;top:0;right:0;z-index:-1;width:20%;height:100%;background: #f7f7f7;}
+#right_content{position:absolute;top:0;right:0;overflow:hidden;width:100%;height:100%}
+#content{position:absolute;top:3em;bottom:0;overflow:hidden;overflow-y:scroll; width:100%;height:auto;background:#fff;font-size:inherit}
+#content_page{position:relative;overflow:hidden;overflow-y:scroll;width:100%;height:100%}
+#header .head-right{position:absolute;top:50%;right:0;margin-top:-3%}
+.head-left a,.head-right a{display:inline-block;width:2rem;height:inherit}
+.head-right a img{width:100%}
+.head-right{margin-right:1em}
+
+.aside_head,.aside_body{display: block;width:100%;height:auto;}
+.aside_head{background: url(../img/info_bg.png)no-repeat;color:#fff;padding:10px;height: 140px;}
+.aside_head > a{width:50px;height:auto;display:block;color:#fff;}
+.aisde_head_right{width:auto;height:auto;margin-left: 60px;}
+.aside_head a img{width:50px;height: 50px;border-radius:50%;box-shadow:0 0 2px 1px rgba(255,255,255,1);}
+.aisde_head_right b,.aisde_head_right span,.aside_body a{display: block;}
+.aisde_head_right span img{width:13px;height:13px;display: inline-block;}
+.aisde_head_right > p,.aside_body p{text-align: left;text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.aside_head h4,.aside_head a p{margin-top: 8px;}
+.aside_head h4 a{padding:2px 6px;background: #ff585d;color:#fff;border-radius:4px;}
+.aside_head h4 a:active{background: #FF1A21;}
+.aside_head h4 span,.aside_body h5{font-weight: normal;font-size: 1rem;}
+.aside_body{overflow:hidden;overflow-y:scroll;height:calc(100% - 140px);}
+.aside_body p{font-size:16px;margin-bottom: 8px;}
+.goodlist_info{height: 20px;line-height: 20px;width:100%;}
+.goodlist_info span{width:50px;height:20px;display: inline-block;}
+.goodlist_info span i{width:18px;height:18px;border-radius:4px;line-height: 20px;text-align: center;display:inline-block;font-style: normal;color: #fff;margin-right: 5px;}
+.goodlist_info span:first-child i{background: #ff585d;}
+.goodlist_info span:nth-child(2) i{background: #FF6F00;}
+.goodlist_info b{color:#FB000D;font-size: 16px;}
+.aside_body ul li{display: block;padding: 10px;border-bottom:1px solid rgba(0,0,0,0.1);}
+
+
+
+
+
+
+
+
+
+
+

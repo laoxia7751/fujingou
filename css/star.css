@@ -1,0 +1,6 @@
+#star{position:relative;width:100%;margin:10px auto;height:24px}
+#star span,#star ul{float:left;display:inline;height:19px;line-height:19px}
+#star ul{margin:0 2px}
+#star li{float:left;width:24px;cursor:pointer;text-indent:-9999px;background:url(../img/star.png) no-repeat}
+#star strong{color:#f60;padding-left:10px}
+#star li.on{background-position:0 -28px}

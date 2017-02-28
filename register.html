@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <!-- 启用360浏览器的极速模式(webkit) -->
+  <meta name="renderer" content="webkit">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 适应移动端end -->
+	<title>水果拼团网站</title>
+	<link rel="stylesheet" href="css/frameui.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+<style>#BAIDU_DSPUI_FLOWBAR,.adsbygoogle,.ad,div[class^="ad-widsget"],div[id^="div-gpt-ad-"],a[href*="@"][href*=".exe"],a[href*="/?/"][href*=".exe"],.adpushwin{display:none !important;}</style><style>.tb960x90,.tb300x250,div[style*="300px"][style*="-15px"][style*="hidden"]{display:none !important;}</style><style>.tb960x90{display:none !important;}</style></head>
+<body>
+	<div id="register-b" class="meal">
+		<!--html5 nav-->
+		<nav class="j-nav navbar">
+	        <div class="logo fl">
+				<a href="user.html"></a>
+			</div>
+			<span class="user-title">注册会员</span>
+	    </nav>
+
+		<div class="register-box">
+			<form action="" class="am-form" id="doc-vld-msg">
+				<fieldset>
+				    <div class="am-form-group">
+				      <label class="am-u-sm-2">
+					    	<span class="registericon registericon-user"></span>
+					  	</label>
+				      	<input type="text" placeholder="用户名" data-validation-message="请输入用户名" required/>
+				    </div>
+				    <div class="am-form-group">
+				      	<label class="am-u-sm-2">
+			    	  		<span class="registericon registericon-password"></span>
+			    	  	</label>
+				      	<input type="password" data-validation-message="请输入密码" placeholder="请输入密码" required/>
+				    </div>
+				    <div class="am-form-group">
+				      	<label class="am-u-sm-2">
+			    	  		<span class="registericon registericon-password"></span>
+			    	  	</label>
+				      	<input type="password" data-validation-message="请再次输入密码" placeholder="请再次输入密码" required/>
+				    </div>
+				    <div class="am-form-group">
+				      	<label class="am-u-sm-2">
+			    	  		<span class="registericon registericon-email"></span>
+			    	  	</label>
+				      	<input type="email" data-validation-message="邮箱输入不正确" placeholder="请输入邮箱" required/>
+				    </div>
+				    <div class="am-form-group">
+				      	<label class="am-u-sm-2">
+			    	  		<span class="registericon registericon-password"></span>
+			    	  	</label>
+				      	<input type="text" data-validation-message="请输入的验证码" placeholder="请输入验证码" style="float: left;width: 56%;" required/>
+				      	<span class="input-group-btn">
+		                <a class="btn"  style="padding:0;"><img src="img/misc.png" style="height:100%"/></a>
+		            </span>
+				    </div>
+				    <button class="btn am-btn am-btn-secondary" type="submit">注 册</button>
+				</fieldset>
+			</form>
+		</div>	
+	</div>
+	<!--引入js资源-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/amazeui.js"></script>
+	<script src="js/handlebars.min.js"></script>
+	<script src="js/amazeui.widgets.helper.js"></script>
+	<script>
+		$(function() {
+		  $('#doc-vld-msg').validator({
+		    onValid: function(validity) {
+		      $(validity.field).closest('.am-form-group').find('.am-alert').hide();
+		    },
+
+		    onInValid: function(validity) {
+		      var $field = $(validity.field);
+		      var $group = $field.closest('.am-form-group');
+		      var $alert = $group.find('.am-alert');
+		      // 使用自定义的提示信息 或 插件内置的提示信息
+		      var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+		      if (!$alert.length) {
+		        $alert = $('<div class="am-alert am-alert-danger"></div>').hide().
+		          appendTo($group);
+		      }
+		      $alert.html(msg).show();
+		    }
+		  });
+		});
+	</script>
+</body>
+</html>

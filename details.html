@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <!-- 启用360浏览器的极速模式(webkit) -->
+  <meta name="renderer" content="webkit">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 适应移动端end -->
+	<title>附近购商品详情页</title>
+    <link href="css/shop.css" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="css/frameui.css"/>
+    <link rel="stylesheet" href="css/slider.css"/>
+    <link rel="stylesheet" type="text/css" href="css/popup.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+
+    
+		<script src="http://www.jq22.com/jquery/jquery-1.9.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+			  $("#quantity").keyup(function(){
+			    if(isNaN($(this).val())||parseInt($(this).val())<1){
+			      $(this).val("1");
+			      $("#totalPrice").html($("#price").val());
+			      return;
+			    }
+			    var total=parseFloat($("#price").val())*parseInt($(this).val());
+			    $("#totalPrice").html(total.toFixed(2));
+			  })
+			    
+			  $("#add").click(function(){
+			    numAdd();
+			  });
+			    
+			  $("#del").click(function(){
+			    numDec();
+			  });
+			});
+			/*商品数量+1*/
+			function numAdd(){
+			  var num_add = parseInt($("#quantity").val())+1;
+			  if($("#quantity").val()==""){
+			    num_add = 1;
+			  }
+			  $("#quantity").val(num_add);
+			  var total = parseFloat($("#price").val())*parseInt($("#quantity").val());
+			  $("#totalPrice").html(total.toFixed(2));
+			}
+			/*商品数量-1*/
+			function numDec(){
+			  var num_dec = parseInt($("#quantity").val())-1;
+			  if(num_dec<1){
+			    //购买数量必须大于或等于1
+			    alert("not lt 1");
+			  }
+			  else{
+			    $("#quantity").val(num_dec);
+			    var total = parseFloat($("#price").val())*parseInt($("#quantity").val());
+			    $("#totalPrice").html(total.toFixed(2));
+			  }
+			}
+		</script>
+</head>
+<body>
+	<section id="layout">
+		<section class="page-wrapper">
+			<!-- 侧栏 -->
+			<section id="left_menu" class="aside_box">
+                <div class="aside_head fl">
+                	<a href="info.html" class="fl text-center">
+                		<img src="img/head.png" alt="">
+                		<p class="sy">江泽民</p>
+                	</a>
+                	<div class="aisde_head_right">
+                		<b class="sy">网店名称</b>
+                		<span>
+        					<img src="img/xing.png">
+        					<img src="img/xing.png">
+        					<img src="img/xing.png">
+        					<img src="img/xing.png">
+        					<img src="img/xing1.png">
+        				</span>
+                		<p>我们用良心做生意，100%真实描述我们用良心做生意，100%真实描述</p>
+                	</div>
+                	<h4><span>0.4km</span> <a href="shop.html" class="fr">进入店铺</a></h4>
+                </div>
+                <div class="aside_body fl">
+                	<ul>
+                		<li>
+                			<a href="details.html">
+                			<p>佳沛新西兰阳光金奇异果</p>
+                			<h5 class="goodlist_info">
+                				<span><i>买</i>25</span>
+                				<span><i>评</i>18</span>
+                				<b class="fr">￥： 30.00</b>
+                			</h5>
+                			</a>
+                		</li>
+                		<li>
+                			<a href="details.html">
+                			<p>长柄玫瑰草莓</p>
+                			<h5 class="goodlist_info">
+                				<span><i>买</i>25</span>
+                				<span><i>评</i>18</span>
+                				<b class="fr">￥： 30.00</b>
+                			</h5>
+                			</a>
+                		</li>
+                		<li>
+                			<a href="details.html">
+                			<p>墨西哥牛油果（巨无霸）</p>
+                			<h5 class="goodlist_info">
+                				<span><i>买</i>25</span>
+                				<span><i>评</i>18</span>
+                				<b class="fr">￥： 30.00</b>
+                			</h5>
+                			</a>
+                		</li>
+                		<li>
+                			<a href="details.html">
+                			<p>现摘百香果新鲜热带广西西番莲鸡蛋果5斤大红果 水果酸爽香甜</p>
+                			<h5 class="goodlist_info">
+                				<span><i>买</i>25</span>
+                				<span><i>评</i>18</span>
+                				<b class="fr">￥： 30.00</b>
+                			</h5>
+                			</a>
+                		</li>
+                		<li>
+                			<a href="details.html">
+                			<p>佳沛新西兰阳光金奇异果</p>
+                			<h5 class="goodlist_info">
+                				<span><i>买</i>25</span>
+                				<span><i>评</i>18</span>
+                				<b class="fr">￥： 30.00</b>
+                			</h5>
+                			</a>
+                		</li>
+                		<li>
+                			<a href="details.html">
+                			<p>长柄玫瑰草莓</p>
+                			<h5 class="goodlist_info">
+                				<span><i>买</i>25</span>
+                				<span><i>评</i>18</span>
+                				<b class="fr">￥： 30.00</b>
+                			</h5>
+                			</a>
+                		</li>
+                		<li>
+                			<a href="details.html">
+                			<p>墨西哥牛油果（巨无霸）</p>
+                			<h5 class="goodlist_info">
+                				<span><i>买</i>25</span>
+                				<span><i>评</i>18</span>
+                				<b class="fr">￥： 30.00</b>
+                			</h5>
+                			</a>
+                		</li>
+                		<li>
+                			<a href="details.html">
+                			<p>现摘百香果新鲜热带广西西番莲鸡蛋果5斤大红果 水果酸爽香甜</p>
+                			<h5 class="goodlist_info">
+                				<span><i>买</i>25</span>
+                				<span><i>评</i>18</span>
+                				<b class="fr">￥： 30.00</b>
+                			</h5>
+                			</a>
+                		</li>
+                		<li>
+                			<a href="details.html">
+                			<p>佳沛新西兰阳光金奇异果</p>
+                			<h5 class="goodlist_info">
+                				<span><i>买</i>25</span>
+                				<span><i>评</i>18</span>
+                				<b class="fr">￥： 30.00</b>
+                			</h5>
+                			</a>
+                		</li>
+                	</ul>
+                </div>
+            </section>
+            <section id="right_content">
+				<!--选择分类弹窗页面↓-->
+				<div class="cd-popup2">
+				    <div class="cd-popup-container2">
+				    	<form action="">
+				        <div class="shopcar_top fl">
+				        	<img src="img/j-d01.jpg" width="100" height="100"/>
+				        	<span>
+				        		<strong  id="totalPrice">￥  36.00</strong>
+				        		<input type="hidden" value="28.1" id="price" />
+				        		<p><span>及时送</span><span>积分抵</span></p>
+				        	</span>
+				        </div>
+				        <div class="shop_car_type fl">
+				        	<p>规格</p>
+				        	<ul>
+					        	<li class="sy choose"><a href="#">火龙果  500g</a></li>
+					        	<li class="sy"><a href="#">火龙果  1kg</a></li>
+					        	<li class="sy"><a href="#">火龙果  2kg</a></li>
+					        	<li class="sy"><a href="#">火龙果  5kg</a></li>
+					        </ul>
+				       	</div>
+				        <div class="shopcar_num fl">
+				        	<span class="fl">数量</span>
+				        	<span class="fr set_num">
+				        		<a id="del">-</a>
+				        		<input type="text" id="quantity" value="1"/> 
+				        		<a id="add">+</a>
+				        	</span>
+				        </div>
+				        <div class="shopcar_true fl">
+				        	<input type="submit" value="立即购买"/>
+				        </div>
+				      </form>
+				        <a href="#0" class="cd-popup-close">×</a>
+				    </div>
+				</div>
+				<!--分享=弹窗页面↓-->
+				<div class="cd-popup">
+				    <div class="cd-popup-container">
+				    		<ul class="touch_share">
+				    			<li class="fl"><a href="#"></a></li><!--微信-->
+				    			<li class="fl"><a href="#"></a></li><!--sina-->
+				    			<li class="fl"><a href="#"></a></li><!--qq-->
+				    			<li class="fl"><a href="#"></a></li><!--qzone-->
+				    		</ul>
+				        <a href="#0" class="cd-popup-close shareclose">×</a>
+				    </div>
+				</div>	
+				
+				
+				<div class="meal">
+					<!--header start-->
+			      	<nav class="j-nav navbar" id="header">
+			        	<div class="logo fl">
+			        		<a href="index.html"></a>
+			        	</div>
+
+			        	<span class="user-title">商品详情</span>
+
+			        	<div class="head-right">
+	                        <a><img src="img/menu.png" alt=""></a>
+	                    </div>
+			      	</nav>
+			      	<!--header end-->
+			      	<section id="content">
+			      		<div id="content_page">
+					      	<!--a1轮播图-->
+						    <div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{"directionNav":false}'>
+							    <ul class="am-slides cl">
+							        <li>
+							        	<img src="img/j-d01.jpg">
+							        </li>
+							        <li>
+							        	<img src="img/j-d02.jpg">
+							        </li>
+							    </ul>
+							</div>
+						
+							<!--介绍-->
+					    	<div class="details-body-box">
+						        <div class="tm">
+						            <div class="td2">
+						            		<div class="td2_name"> <i>越南进口白肉火龙果</i> <span>剩余：<b>948</b>件</span></div>
+						                <div class="td2_price">
+						                	<b>￥   </b><p>36.00</p>
+						                	<s>￥   40.00</s>
+						                	<span>及时送</span>
+						                	<span>积分抵</span>
+						                </div>
+						                <div class="cl"></div>
+						                
+						                <div class="td2_cx">外皮红艳，果肉绵软白嫩，汁液丰富，富含维生素C.</div>
+						            </div>
+						        </div>
+						        <!--选择规格（弹窗）-->
+						        <div class="tm2">
+						            <div class="gd_type">
+						            	<a href="javascript:0;" class="cd-popup-trigger2">
+						            		<span>选择</span>
+						            		<p class="sy">火龙果  500g 1件</p>
+						            		<span><i class="more-solid icon"></i></span>
+						            	</a>
+						            </div>
+						        </div>        
+								<div id="" class="good_others">
+									<ul class="good_others_nav">
+										<li class="li choose"><a href="#">商品详情</a></li>
+										<li class="li"><a href="#">累计评论<small>(10)</small></a></li>
+										<li class="li"><a href="#">成交记录<small>(12)</small></a></li>
+									</ul>
+									<!--商品详情↓-->
+									<div class="outs-box" >
+							            <img src="img/d1.jpg">
+							            <img src="img/d2.jpg">
+							            <img src="img/d3.jpg">
+							            <img src="img/d4.jpg">
+							        </div>
+							        <!--累计评论-->
+							        <div class="outs-box gd_comment" style="display:none;">
+							            <ul>
+							            	<li>
+							            		<div class="gd_comment_head">
+							            			<a href="#">
+							            				<img src="img/head.png"/>
+							            				<p class="sy">李狗蛋</p>
+							            			</a>
+							            			<div class="buyers">
+																	<p>2014-10-24 14:50:30</p>
+							            				<span>
+							            					<img src="img/xing.png">
+							            					<img src="img/xing.png">
+							            					<img src="img/xing.png">
+							            					<img src="img/xing.png">
+							            					<img src="img/xing1.png">
+							            				</span>
+							            			</div>
+							            		</div>
+							            		<div class="gd_comment_txt">
+							            			<p>质量真心不错，料子很透气，穿上也不粘身，而且款式很修体型，能遮盖掉肚子上的赘肉，颜色没有色差，显的很洋气</p>
+							            		</div>
+							            		<div class="gd_comment_pic">
+							            			<img src="img/j-d02.jpg"/>
+							            			<img src="img/m2.jpg"/>
+							            			<img src="img/m3.jpg"/>
+							            		</div>
+							            		<!--商家回复-->
+							            		<div class="gd_comment_saler">
+							            			<p><b>商家回复: </b> 谢谢您的反馈，我们会更加努力的！</p>
+							            		</div>
+							            	</li>
+							            	<li>
+							            		<div class="gd_comment_head">
+							            			<a href="#">
+							            				<img src="img/head.png"/>
+							            				<p class="sy">李狗蛋</p>
+							            			</a>
+							            			<div class="buyers">
+																	<p>2014-10-24 14:50:30</p>
+							            				<span>
+							            					<img src="img/xing.png">
+							            					<img src="img/xing.png">
+							            					<img src="img/xing.png">
+							            					<img src="img/xing.png">
+							            					<img src="img/xing1.png">
+							            				</span>
+							            			</div>
+							            		</div>
+							            		<div class="gd_comment_txt">
+							            			<p>质量真心不错，料子很透气，穿上也不粘身，而且款式很修体型，能遮盖掉肚子上的赘肉，颜色没有色差，显的很洋气</p>
+							            		</div>
+							            		<div class="gd_comment_pic">
+							            			<img src="img/j-d02.jpg"/>
+							            			<img src="img/m2.jpg"/>
+							            			<img src="img/m3.jpg"/>
+							            		</div>
+							            		<!--商家回复-->
+							            		<div class="gd_comment_saler">
+							            			<p><b>商家回复: </b> 谢谢您的反馈，我们会更加努力的！</p>
+							            		</div>
+							            	</li>
+							            </ul>
+							        </div>
+							        <!--成交记录-->
+							        <div class="outs-box gd_sale_history" style="display: none;">
+							            <p>已订</p>
+							            <ul class="booked">
+							            	<li>
+							            		<a href="#">
+							            			<img src="img/head.png"/>
+							            			<p class="sy">匿名用户</p>
+							            		</a>
+							            	</li>
+							            	<li>
+							            		<a href="#">
+							            			<img src="img/head.png"/>
+							            			<p class="sy">岳云互联</p>
+							            		</a>
+							            	</li>
+							            	<li>
+							            		<a href="#">
+							            			<img src="img/head.png"/>
+							            			<p class="sy">岳云互联</p>
+							            		</a>
+							            	</li>
+							            	<li>
+							            		<a href="#">
+							            			<img src="img/head.png"/>
+							            			<p class="sy">岳云互联</p>
+							            		</a>
+							            	</li>
+							            	<li>
+							            		<a href="#">
+							            			<img src="img/head.png"/>
+							            			<p class="sy">岳云互联</p>
+							            		</a>
+							            	</li>
+							            	<li>
+							            		<a href="#">
+							            			<img src="img/head.png"/>
+							            			<p class="sy">岳云互联</p>
+							            		</a>
+							            	</li>
+							            </ul>
+							            <p>已成交</p>
+							            <ul class="sold_out">
+							            	<li>
+							            		<a href="#">
+							            			<img src="img/head.png"/>
+							            			<p>岳云互联</p>
+							            		</a>
+							            		<div class="history_others">
+							            			<p>2014-09-11</p>
+							            			<h5>
+							            				<span>火龙果  500g </span> 
+							            				<i> 1 件</i>
+							            			</h5>
+							            			<h4><strong>￥  36.00</strong></h4>
+							            		</div>
+							            	</li>
+							            	<li>
+							            		<a href="#">
+							            			<img src="img/head.png"/>
+							            			<p>岳云互联</p>
+							            		</a>
+							            		<div class="history_others">
+							            			<p>2014-09-11</p>
+							            			<h5>
+							            				<span>火龙果  500g </span> 
+							            				<i> 1 件</i>
+							            			</h5>
+							            			<h4><strong>￥  36.00</strong></h4>
+							            		</div>
+							            	</li>
+							            	<li>
+							            		<a href="#">
+							            			<img src="img/head.png"/>
+							            			<p>岳云互联</p>
+							            		</a>
+							            		<div class="history_others">
+							            			<p>2014-09-11</p>
+							            			<h5>
+							            				<span>火龙果  500g </span> 
+							            				<i> 1 件</i>
+							            			</h5>
+							            			<h4><strong>￥  36.00</strong></h4>
+							            		</div>
+							            	</li>
+							            </ul>
+							        </div>
+								</div>
+					        </div>
+					    </div>
+			        </section>
+			    </div>
+
+			    <!--detail_footer begin-->
+				<footer class="detail_footer" id="footer">
+			        <div class="return_left_box">
+			        		<!--收藏（点击收藏，收藏后a增加一个类名（love_y））-->
+			            <a href="" class=" " ><div class="return_love fl"></div></a>
+			            <!--分享-->
+			            <a href="javascript:void(0);" class="cd-popup-trigger0" ><div class="return_love share_tuan fl"></div></a>    
+			        </div>  
+			        <a href="pay.html"><div class="promptly_tuan fl">我要下单</div></a>
+			         
+			        <div class="cl"></div>
+			    </footer>
+			    <!--detail_footer end-->
+			</section>
+		</section>
+	</section>
+
+	<!--引入js资源-->
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/jgestures.min.js"></script>
+	<script src="js/shop.js"></script>
+	<script src="js/amazeui.js"></script>
+	<script src="js/handlebars.min.js"></script>
+	<script src="js/amazeui.widgets.helper.js"></script>
+	<script type="text/javascript">
+    /*弹框JS内容*/
+    jQuery(document).ready(function($){
+    		//选择
+				//打开窗口
+        $('.cd-popup-trigger2').on('click', function(event){
+            event.preventDefault();
+            $('.cd-popup2').addClass('is-visible2');
+            //$(".dialog-addquxiao").hide()
+        });
+        //关闭窗口
+        $('.cd-popup2').on('click', function(event){
+            if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup2') ) {
+                event.preventDefault();
+                $(this).removeClass('is-visible2');
+            }
+        });
+        //ESC关闭
+        $(document).keyup(function(event){
+            if(event.which=='27'){
+                $('.cd-popup2').removeClass('is-visible2');
+            }
+        });
+        
+        //分享
+         //打开窗口
+        $('.cd-popup-trigger0').on('click', function(event){
+            event.preventDefault();
+            $('.cd-popup').addClass('is-visible');
+            //$(".dialog-addquxiao").hide()
+        });
+        //关闭窗口
+        $('.cd-popup').on('click', function(event){
+            if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+                event.preventDefault();
+                $(this).removeClass('is-visible');
+            }
+        });
+        //ESC关闭
+        $(document).keyup(function(event){
+            if(event.which=='27'){
+                $('.cd-popup').removeClass('is-visible');
+            }
+        });
+		
+    });
+    
+    
+    $(function(){
+			$('.good_others .li').click(function(){
+				$('.outs-box').hide();
+				$('.outs-box').eq($(this).index()).show();
+				$('.li').removeClass('choose');
+				$('.li').eq($(this).index()).addClass('choose');	
+			})
+		})
+	</script>
+</body>
+</html>

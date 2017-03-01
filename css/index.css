@@ -140,7 +140,7 @@ section {
 .list-unstyled{ list-style: outside none none;}
 .j-component-func{padding:10px; border-bottom: 1px solid #F4F4F4; margin-bottom: 10px;}
 .j-component-func>ul{overflow: hidden;}
-.j-component-func>ul>li{float:left; width:20%; text-align:center; padding:2px 0;}
+.j-component-func>ul>li{float:left; width:calc(25% - 1px);text-align:center; padding:2px 0;}
 .j-component-func>ul>li>a{display:block;font:1em/25px 'microsoft yahei'; color:#505050;}
 .j-component-func .fdayicon{display:block; width:50px; height:50px; line-height:50px; border-radius:45%; margin:0 auto;
  background: #49a6ec url("../img/home.png") no-repeat scroll 0% 0% / 117px auto;}
@@ -164,12 +164,11 @@ section {
     background-color: #af68be;
 }
 
-.route1,.route2,.route3,.route4,.route5{-webkit-transform:rotateY(90deg);   transform:rotateY(90deg);}
-.route1{-webkit-transition:-webkit-transform .3s ease-out 0s; transition:transform .3s ease-out 0s;}
-.route2{-webkit-transition:-webkit-transform .3s ease-out 1.2s; transition:transform .3s ease-out .2s;}
-.route3{-webkit-transition:-webkit-transform .3s ease-out .4s; transition:transform .3s ease-out .4s;}
-.route4{-webkit-transition:-webkit-transform .3s ease-out .6s; transition: transform .3s ease-out .6s;}
-.route5{-webkit-transition:-webkit-transform .3s ease-out .8s; transition: transform .3s ease-out .8s;}
+.route1,.route2,.route3,.route4{-webkit-transform:rotateY(90deg);transform:rotateY(90deg);}
+.route1{-webkit-transition:-webkit-transform .3s ease-out .2s; transition:transform .3s ease-out .2s;}
+.route2{-webkit-transition:-webkit-transform .3s ease-out .4s; transition:transform .3s ease-out .2s;}
+.route3{-webkit-transition:-webkit-transform .3s ease-out .6s; transition:transform .3s ease-out .4s;}
+.route4{-webkit-transition:-webkit-transform .3s ease-out .8s; transition: transform .3s ease-out .6s;}
 .route{-webkit-transform:rotateY(0deg); transform:rotateY(0deg);}
 /*------内容------*/
 .j-component-bestsell{padding-bottom: 70px;}
@@ -353,7 +352,7 @@ section {
     font-size: 1.3rem;
     border-radius: 5px;
 }
-.td2_name i{width:70%;float:left;font-style:normal;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.td2_name i{width:69%;float:left;font-style:normal;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 
 .td2_name span b{
     font-weight: 100;
@@ -1209,7 +1208,7 @@ border-color:#fff transparent transparent;position: absolute;top:40%;margin-left
 }
 .coupon-nav,
 .myorder-nav{ margin: 10px;}
-.coupon-list{
+.coupon-list,.comment-list{
     height: 35px;
     line-height: 35px;
     overflow: hidden;
@@ -1223,17 +1222,24 @@ border-color:#fff transparent transparent;position: absolute;top:40%;margin-left
     width: 33.33%;
     text-align: center;
 }
-.coupon-list li.pick{
+.coupon-list li.pick,.comment-list li.pick{
     background-color: #49a6ec;
     color: #FFF;
 }
-.coupon-list li span.bar {
+.coupon-list li span.bar,.comment-list li span.bar {
     float: left;
     width: 1px;
     height: 35px;
     background-color: #49a6ec;
     vertical-align: middle;
 }
+
+.comment-list li{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
 
 .myorder-content ul{ margin: 10px 0;}
 .cc-all ul,.mc-all{ margin: 0;}
@@ -1430,7 +1436,8 @@ border-color:#fff transparent transparent;position: absolute;top:40%;margin-left
 }
 .footer a {
     color: #777;
-    font-size: 0.875rem;
+    font-size: 12px!important;
+    font-weight: 400;
 }
 .user-b{ margin-bottom: 68px;}
 .user-b .footer a { font-size: .875rem;}
@@ -1454,11 +1461,11 @@ border-color:#fff transparent transparent;position: absolute;top:40%;margin-left
 }
 .fb-home{ background-position: 0px -124px;}
 .active .fb-home { background-position: 0px 0;}
-.fb-group { background-position: 0px -156px;}
-.active .fb-group { background-position: 0px -31px;}
-.fb-list { background-position: 0px -187px;}
-.active .fb-list { background-position: 0px -62px;}
-.fb-user { background-position: 0px -218px;}
+.fb-group { background-position: 0px -155px;}
+.active .fb-group { background-position: 0px -30px;}
+.fb-list { background-position: 0px -186px;}
+.active .fb-list { background-position: 0px -61px;}
+.fb-user { background-position: 0px -217px;}
 .active .fb-user { background-position: 0px -92px;}
 
 
@@ -1611,7 +1618,8 @@ border-color:#fff transparent transparent;position: absolute;top:40%;margin-left
 .evaluated{float:right;border:none;background: #999;color:#fff;padding: 2px 8px;border-radius:4px;pointer-events: none;}
 
 /*订单详情*/
-.open_qq{width:16px;height:19px;float:right;background: url(../img/qq.png)no-repeat;}
+.open_qq{width:16px;height:19px;float:right;background: url(../img/qq.png)no-repeat;margin-right: 3px;}
+.open_phone{width:20px;height:20px;float:right;background: url(../img/phone.png)no-repeat;background-size:100%;}
 
 
 .mail-solid.icon:before {
@@ -1831,6 +1839,18 @@ border-color:#fff transparent transparent;position: absolute;top:40%;margin-left
 .getdemand_body p em{width:20%;display: block;color:#666}
 .getdemand_body p i{width:75%;display: block;text-align: right;color:#444}
 
-
-
+/*商家订单中心*/
+.ordercenter_info{background: #fff;}
+.ordercenter_info a{display: block;}
+.ordercenter_info li{color:#666;border-radius:5px;border-bottom:1px solid #f1f1f1;padding:10px;}
+.ordercenter_info li h3{font-weight: 400;display: flex;justify-content: flex-end;}
+.order_center_down input,.order_center_down a{border:none;width:80px;font-family: '微软雅黑';height:26px;line-height:24px;border-radius:4px;color:#fff;font-size:0.875rem;display: inline-block;text-align: center;margin-left: 10px;}
+.order_center_down input{background: #f44336;}
+.order_center_down a{background: #009fab;}
+.order_center_detail{margin-top: 10px;background: #f7f7f7;border-radius:4px;display: none;}
+.order_center_detail tr{height:30px;}
+.order_center_detail tr td:first-child{width:22%;color:#888;}
+.order_center_detail tr input{width:100px;height: 30px;border:none;background: #735645;color:#fff;display: inline-block;border-radius: 4px;}
+.order_center_down input.signed{background: #888;pointer-events:none;}
+.order_center_down input.completed{background: #888;pointer-events:none;}
 

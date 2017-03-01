@@ -1,4 +1,5 @@
-#star{position:relative;width:100%;margin:10px auto;height:24px}
+#star{position:relative;width:100%;margin:10px auto;height:35px}
+.star_title{width:100%!important;}
 #star span,#star ul{float:left;display:inline;height:19px;line-height:19px}
 #star ul{margin:0 2px}
 #star li{float:left;width:24px;cursor:pointer;text-indent:-9999px;background:url(../img/star.png) no-repeat}
